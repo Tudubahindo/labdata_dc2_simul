@@ -3,7 +3,7 @@
 
 il file simul.py contiene il codice di python usato per le simulazioni numeriche e anche per le altre analisi sui dati reali (e relativi plot). Per dovizia ho caricato anche i dataset puliti.
 
-la funzione ``hopkins_statistic (X)`` restituisce, dato un dataframe di una colonna, la relativa statistica di Hopkins. L'ho copiata da [qui](https://github.com/prathmachowksey/Hopkins-Statistic-Clustering-Tendency/blob/master/.ipynb_checkpoints/Hopkins-Statistic-Clustering-Tendency-checkpoint.ipynb), quindi per dettagli sull'implementazione consultare la pagina originale.
+la funzione ``hopkins_statistic (X)`` restituisce, dato un dataframe di una colonna, la relativa statistica di Hopkins. L'ho copiata da [qui](https://github.com/prathmachowksey/Hopkins-Statistic-Clustering-Tendency/blob/master/.ipynb_checkpoints/Hopkins-Statistic-Clustering-Tendency-checkpoint.ipynb), quindi per dettagli sull'implementazione consultare la pagina originale. Il resto l'ho effettivamente scritto io.
 
 la funzione ``hopkins_calibration (N, rho)``, chiamata così per il suo uso nella calibrazione di Hopkins ma in realtà di utilizzo più generale, restituisce un dateset simulato di N numeri tra 0 e 1, generato secondo il parametro rho:
 
@@ -13,6 +13,6 @@ la funzione ``hopkins_calibration (N, rho)``, chiamata così per il suo uso nell
 
 la funzione ``dataset_visualization ()`` genera tre dataset con ``hopkins_calibration (100, rho)``, con rho rispettivamente 0, 10 e -10, e li plotta con dei barcode.
 
-la funzione ``sogliole (num, simulnum, rho, printing)``, chiamata così perché usata nella calibrazione delle sogliole ma in realtà di utilizzo più generale, genera ``simulnum`` dataset usando ``hopkins_calibration (num, rho)`` e di ogni dataset calcola la statistica di Hopkins *h* usando ``hopkins_statistic (X)``. La funzione restituisce quindi il valore medio di *h* tra tutti i dataset. Se poi si specifica ``printng==True`` la funzione restituisce il valore massimo degli *h*, oltra alla media e il valor minimo, e il 2.5 e il 97.5 percentile, per la calibrazione delle soglie. Lo stesso per la deviazione standard relativa.
+la funzione ``sogliole (num, simulnum, rho, printing)``, chiamata così perché usata nella calibrazione delle sogliole ma in realtà di utilizzo più generale, genera ``simulnum`` dataset usando ``hopkins_calibration (num, rho)`` e di ogni dataset calcola la statistica di Hopkins *h* usando ``hopkins_statistic (X)``. La funzione restituisce quindi il valore medio di *h* tra tutti i dataset. Se poi si specifica ``printng==True`` la funzione stampa il valore massimo degli *h*, oltre alla media e al valor minimo, e il 2.5 e il 97.5 percentile, per la calibrazione delle soglie. Lo stesso per la deviazione standard relativa.
 
 Nel ``main()``segue poi l'analisi sui dati reali.
